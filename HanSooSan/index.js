@@ -68,7 +68,7 @@ console.log(solution3([1, 2, 3, 4, 5, 3, 2, 1]));
 // 왼 카운트 * 오 카운트 + 1 (봉우리 숫자) 하여 하나의 봉우리에 나올 수 있는 수열의 경우의 수 파악
 // 모든 경우의 수를 합쳐줌
 
-// 최대값 윛치
+// 최대값 위치
 const solution4 = (nums) => {
   let answer = [];
   let n = nums.length;
@@ -160,4 +160,3 @@ console.log(solution6(
   ]))
 
   // 각 행의 최대값 반대로
-
