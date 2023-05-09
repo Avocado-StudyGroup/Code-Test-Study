@@ -38,3 +38,43 @@ console.log(
     [15, 37, 78, 93, 59],
   ])
 );
+
+// 스카이 라인
+function solution2(board) {
+  let answer = 0;
+  let n = board.length;
+  // 앞쪽 옆쪽 스카이 라인 숫자 구하기
+  let xMax = [];
+  let yMax = [];
+  for (let i = 0; i < n; i++) {
+    yMax.push(Math.max(...board[i]));
+    let max = 0;
+    for (let j = 0; j < n; j++) {
+      if (board[j][i] > max) {
+        max = board[j][i];
+      }
+    }
+    xMax.push(max);
+  }
+  // 스카이라인의 앞, 옆쪽 최대값중에 작은 값을 넘지 않는 선에서 더해주기
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (board[i][j] < xMax[i] || board[i][j] < yMax[i]) {
+        let min = Math.min(xMax[j], yMax[i]);
+        answer += min - board[i][j];
+      }
+    }
+  }
+  console.log("here", answer);
+  return answer;
+}
+
+console.log(
+  solution2([
+    [2, 5, 7, 3, 5],
+    [6, 8, 9, 7, 3],
+    [3, 2, 4, 5, 7],
+    [7, 2, 5, 8, 6],
+    [1, 2, 3, 4, 5],
+  ])
+);
