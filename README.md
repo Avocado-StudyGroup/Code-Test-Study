@@ -7,7 +7,6 @@
     <td align="center">
       <a href="https://github.com/hyerani">
         <img src="https://avatars.githubusercontent.com/u/113823957?v=4" width="100px;" alt=""/>
-        <br/>
         <sub>
           <b>hyerani</b><br/>
         </sub>
@@ -16,7 +15,6 @@
     <td align="center">
       <a href="https://github.com/0nesan">
         <img src="https://avatars.githubusercontent.com/u/76930602?v=4" width="100px;" alt=""/>
-        <br />
         <sub>
           <b>0nesan</b><br>
         </sub>
@@ -25,7 +23,6 @@
     <td align="center">
       <a href="https://github.com/eun0leee">
         <img src="https://avatars.githubusercontent.com/u/90189513?v=4" width="100px;" alt=""/>
-        <br />
         <sub>
           <b>eun0leee</b><br>
         </sub>
