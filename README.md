@@ -62,4 +62,4 @@
 
 ## 🥑 스터디 기록
 
-- [↘️Wiki를 참고해주세요!](https://github.com/Avocado-StudyGroup/Code-Test-Study/wiki)
+- 수정중
