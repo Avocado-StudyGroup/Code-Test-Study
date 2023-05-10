@@ -7,24 +7,27 @@
     <td align="center">
       <a href="https://github.com/hyerani">
         <img src="https://avatars.githubusercontent.com/u/113823957?v=4" width="100px;" alt=""/>
+        <br/>
         <sub>
-          <b>hyerani</b><br/>
+          <b>hyerani</b>
         </sub>
       </a><br />
     </td>
     <td align="center">
       <a href="https://github.com/0nesan">
         <img src="https://avatars.githubusercontent.com/u/76930602?v=4" width="100px;" alt=""/>
+        <br/>
         <sub>
-          <b>0nesan</b><br>
+          <b>0nesan</b>
         </sub>
       </a><br/>
     </td>
     <td align="center">
       <a href="https://github.com/eun0leee">
         <img src="https://avatars.githubusercontent.com/u/90189513?v=4" width="100px;" alt=""/>
+        <br/>
         <sub>
-          <b>eun0leee</b><br>
+          <b>eun0leee</b>
         </sub>
       </a><br/>
     </td>
