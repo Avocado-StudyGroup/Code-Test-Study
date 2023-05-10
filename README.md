@@ -31,7 +31,7 @@
         </sub>
       </a><br/>
     </td>
-</table><br/>
+</table>
 
 ## 🥑 스터디 목적
 
