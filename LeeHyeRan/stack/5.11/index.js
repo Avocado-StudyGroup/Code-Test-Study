@@ -17,3 +17,23 @@ function solution1(s) {
 }
 
 console.log(solution1(")())"));
+
+// 괄호 문자 제거
+function solution2(s) {
+  let answer = [];
+  // 괄호 확인 배열
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      arr.push(s[i]);
+    } else if (s[i] === ")") {
+      arr.pop();
+      // 괄호가 하나도 없으면 answer에 추가
+    } else if (arr.length === 0) {
+      answer.push(s[i]);
+    }
+  }
+  return answer.join("");
+}
+
+console.log(solution2("A((AF)B)(D)E(F)G"));
