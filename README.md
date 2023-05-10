@@ -9,34 +9,35 @@
         <img src="https://avatars.githubusercontent.com/u/113823957?v=4" width="100px;" alt=""/>
         <br/>
         <sub>
-          <b>hyerani</b><br/>
+          <b>hyerani</b>
         </sub>
       </a><br />
     </td>
     <td align="center">
       <a href="https://github.com/0nesan">
         <img src="https://avatars.githubusercontent.com/u/76930602?v=4" width="100px;" alt=""/>
-        <br />
+        <br/>
         <sub>
-          <b>0nesan</b><br>
+          <b>0nesan</b>
         </sub>
       </a><br/>
     </td>
     <td align="center">
       <a href="https://github.com/eun0leee">
         <img src="https://avatars.githubusercontent.com/u/90189513?v=4" width="100px;" alt=""/>
-        <br />
+        <br/>
         <sub>
-          <b>eun0leee</b><br>
+          <b>eun0leee</b>
         </sub>
       </a><br/>
     </td>
-</table><br/>
+</table>
 
 ## 🥑 스터디 목적
 
 - 꾸준히 자바스크립트 코딩테스트 문제 풀기
 - 꾸준히 github repository 에 기록 남기기
+
 
 ## 🥑 스터디 진행 방법
 
@@ -62,4 +63,4 @@
 
 ## 🥑 스터디 기록
 
-- [↘️Wiki를 참고해주세요!](https://github.com/Avocado-StudyGroup/Code-Test-Study/wiki)
+- 수정중
