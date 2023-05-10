@@ -54,3 +54,22 @@ function solution3(s) {
 }
 
 console.log(solution3("bacccaba"));
+
+// 쇠 막대기
+function solution4(s) {
+  let answer = 0;
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") arr.push(s[i]);
+    else {
+      arr.pop();
+      // "(" 를 만나면 레이저 포인터가 되기 때문에 길이 더하기
+      if (s[i - 1] === "(") answer += arr.length;
+      // 포인터가 아닐경우 1 증가
+      else answer++;
+    }
+  }
+  return answer;
+}
+
+console.log(solution4("((((()))))"));
