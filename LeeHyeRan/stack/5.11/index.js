@@ -37,3 +37,20 @@ function solution2(s) {
 }
 
 console.log(solution2("A((AF)B)(D)E(F)G"));
+
+// 연속된 문자 지우기
+function solution3(s) {
+  let answer = [];
+  for (let i = 0; i < s.length; i++) {
+    // 배열의 길이가 0보다 크고, 배열의 마지막 값과 비교값이 같으면 빼내기
+    if (answer.length > 0 && s[i] === answer[answer.length - 1]) {
+      answer.pop();
+    } else {
+      answer.push(s[i]);
+    }
+  }
+
+  return answer.join("");
+}
+
+console.log(solution3("bacccaba"));
