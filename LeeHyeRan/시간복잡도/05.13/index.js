@@ -49,3 +49,53 @@ function solution2(nums, m) {
 }
 
 console.log(solution2([5, 5, 5], 5));
+
+// 공사비용
+function solution3(cost, m) {
+  let answer = 0;
+  for (let i = 0; i < cost.length; i++) {
+    let count = 0;
+    let sum = 0;
+    for (let j = 0; j < cost.length; j++) {
+      // sum에 공사비용 더해주기
+      sum += cost[i + j];
+      // 공사비용이 작은 구간 카운트
+      if (sum <= m) {
+        count++;
+      }
+      // answer에 count큰 값 할당
+      count > answer ? (answer = count) : answer;
+    }
+  }
+  return answer;
+}
+
+console.log(solution3([100, 50, 120, 50, 150, 0, 50, 60], 400));
+
+// 최대길이 부분수열
+function solution4(nums, k) {
+  let answer = 0;
+  for (let i = 0; i < nums.length; i++) {
+    let count = k;
+    let len = 0;
+    for (let j = 0; j < nums.length; j++) {
+      // 1을 만나면 길이 더해주기
+      if (nums[i + j] === 1) {
+        len += 1;
+        // 0을 만나고 바꿀수 있는 횟수가 0이 아니라면 카운트 해주고 횟수 빼주기
+      } else if (nums[i + j] === 0 && count !== 0) {
+        count -= 1;
+        len += 1;
+        // 0을 만나고 카운트가 0이라면 len 랑 비교해서 큰값을 answer에 할당 후 for문 빠져나오기
+      } else if (nums[i + j] === 0 && count === 0) {
+        len > answer ? (answer = len) : answer;
+        break;
+      }
+      // 바꿀수 있는 최대 횟수를 다쓰고도 계속 더해줬다면 마지막에 len랑 비교해서 answer에 큰 값 할당
+      len > answer ? (answer = len) : answer;
+    }
+  }
+  return answer;
+}
+
+console.log(solution4([1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1], 2));
