@@ -1,3 +1,4 @@
+// 공주 찾기
 const solution1 = (n, k) => {
   let answer;
   let prince = [];
@@ -22,6 +23,7 @@ const solution1 = (n, k) => {
 
 console.log(solution1(8, 3));
 
+// 최대 매출
 const solution2 = (nums, k) => {
   let answer = 0;
   let sum = 0;
