@@ -24,4 +24,4 @@ function solution4(nums, k) {
   return answer;
 }
 
-console.log(solution4([1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1], 2));
+console.log(solution4([1, 1, 0, 0], 2));

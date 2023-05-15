@@ -40,4 +40,4 @@ function solution(n) {
   return answer;
 }
 
-console.log(solution(15));
+console.log(solution(45678));
