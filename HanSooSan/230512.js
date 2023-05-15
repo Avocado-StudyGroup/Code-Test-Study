@@ -132,7 +132,7 @@ const solution5 = (n) => {
   return answer;
 };
 
-console.log(solution5(45678));
+console.log(solution5(98765));
 // n 길이의 arr를 만들고
 // rt를 올리면서 arr[rt]를 sum에 추가
 // snm 이 m과 같으면 answer 올려주고 m을 초과해버리면 sum에서 arr[lt]를 빼고 lt를 올려줌
