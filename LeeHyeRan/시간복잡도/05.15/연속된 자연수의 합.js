@@ -31,11 +31,9 @@ function solution(n) {
   let lt = 0;
   for (let rt = 0; rt < m; rt++) {
     sum += nums[rt];
-    console.log("here", sum);
     // sum이 n보다 크면 n보다 작아질때까지 1부터 빼줌
     while (sum > n) {
       sum -= nums[lt++];
-      console.log("ehhhh", sum);
     }
     if (sum === n) answer++;
   }
