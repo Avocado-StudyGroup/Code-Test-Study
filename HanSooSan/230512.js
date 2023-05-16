@@ -57,17 +57,18 @@ const solution3 = (cost, m) => {
 
   // cost[rt]를 하나하나 추가하면서 answer(구간)을 올려준다 그리고 예상 초과의 경우
   // constArr에 현재까지의 구간 길이를 넣어주고 lt를 올리면서 구간 길이를 빼준다
-  while (rt > cost.length) {
-    if (sum >= m) {
+  while (rt < cost.length) {
+    sum += cost[rt];
+    rt++;
+    len++;
+
+    while (sum > m) {
       sum -= cost[lt];
       lt++;
-      answer = Math.max(answer, len);
       len--;
-    } else {
-      sum += cost[rt];
-      rt++;
-      len++;
     }
+
+    answer = Math.max(answer, len);
   }
 
   return answer;
@@ -80,27 +81,25 @@ const solution3 = (cost, m) => {
 const solution4 = (cost, m) => {
   let answer = 0;
   let sum = 0;
-  let lt = 0;
   let rt = 0;
   let t = 0;
 
-  while (rt < cost.length) {
-    if (cost[rt] === 0) t++;
-
-    if (t > m) {
-      answer = Math.max(answer, sum);
-      sum = 0;
-      rt = lt;
-      t = 0;
-    } else if (t >= m - 1) lt++;
-
-    rt++;
-    sum++;
+  for (let i = 0; i < cost.length; i++) {
+    rt = i;
+    sum = 0;
+    t = 0;
+    while (rt < cost.length) {
+      if (cost[rt] === 0) t++;
+      if (t > m) break;
+      sum++;
+      rt++;
+    }
+    answer = Math.max(answer, sum);
   }
 
   return answer;
 };
-console.log(solution4([1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1], 2));
+console.log(solution4([1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1], 2), "최대길이");
 
 // rt로 앞으로 나가면서 0이 m개가 될 때까지 길이를 샌다
 // 0이 2개가 되고 그 다음 좌표까지만 lt가 오를 수 있도록 하고 (t >= m - 1) lt++;
@@ -132,7 +131,7 @@ const solution5 = (n) => {
   return answer;
 };
 
-console.log(solution5(98765));
+// console.log(solution5(98765));
 // n 길이의 arr를 만들고
 // rt를 올리면서 arr[rt]를 sum에 추가
 // snm 이 m과 같으면 answer 올려주고 m을 초과해버리면 sum에서 arr[lt]를 빼고 lt를 올려줌
