@@ -17,12 +17,31 @@ const solution1 = (nums, m) => {
   return answer;
 }
 
-console.log(solution1([23, 87, 65, 12, 57, 32, 99, 81], 32))
+const solution3 = (nums, m) => {
+  let answer;
+
+  nums.sort((a, b) => a - b);
+  let lt = 0
+  let rt = nums.length - 1
+  while (lt <= rt) {
+    let mid = parsInt((lt + rt) / 2)
+    if (nums[mid] === m) {
+      answer = mid + 1
+      break
+    }
+    else if (nums[mid] > m) rt = mid - 1
+    else lt = mid + 1
+  }
+}
+
+
+// console.log(solution1([23, 87, 65, 12, 57, 32, 99, 81], 32))
 
 // 랜선자르기
 const solution2 = (nums, n) => {
 
   let answer;
+
   function count(len) {
     let cnt = 0;
     for (let x of nums) {
@@ -30,6 +49,7 @@ const solution2 = (nums, n) => {
     }
     return cnt;
   }
+
   let lt = 1;
   let rt = Math.max(...nums);
   while (lt <= rt) {
@@ -42,6 +62,7 @@ const solution2 = (nums, n) => {
     else {
       rt = mid - 1;
     }
+    console.log(mid)
   }
 
   return answer;
