@@ -1,29 +1,25 @@
 // 프로그래머스 크레인 인형뽑기
-// 통과를 못해서 다시 풀어야 합니다! ㅠ_ㅠ
 function solution(board, moves) {
   let answer = 0;
   let array = [];
-  let len = Array.from({ length: board.length }, (v, i) => i + 1);
   for (let i = 0; i < moves.length; i++) {
-    for (let j = 0; j < moves.length; j++) {
-      for (let k = 0; k < moves.length; k++) {
-        if (moves[i] === j + 1 && board[k][i] !== 0) {
-          array.push(board[k][i]);
-          board[k][i] = 0;
-          break;
+    let m = moves[i] - 1;
+    for (let j = 0; j < board.length; j++) {
+      if (board[j][m] !== 0) {
+        array.push(board[j][m]);
+        board[j][m] = 0;
+        for (let k = 0; k < array.length; k++) {
+          if (array[k - 1] === array[k]) {
+            answer += 2;
+            array.pop();
+            array.pop();
+          }
         }
+        break;
       }
     }
   }
 
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      if (array[j] === array[j + 1]) {
-        answer += 2;
-        array.splice(j, 2);
-      }
-    }
-  }
   return answer;
 }
 
