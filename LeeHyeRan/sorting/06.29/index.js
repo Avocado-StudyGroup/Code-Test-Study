@@ -1,5 +1,4 @@
 // 프로그래머스 실패율
-// 다른 테스트케이스들 통과가 안되네욥..ㅠ
 function solution(N, stages) {
   let answer = [];
   let fail = [];
@@ -18,20 +17,18 @@ function solution(N, stages) {
 
   // 실패율 구해서 넣어주기
   for (let i = 0; i < fail.length; i++) {
-    stageN[i] = fail[i] / user;
+    stageN[i] = [i + 1, fail[i] / user];
     user = user - fail[i];
   }
 
   // answer에 실패율 높은 스테이지 순서대로 넣어주기
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N; j++) {
-      if (stageN[j] === Math.max(...stageN) && !answer.includes(j + 1)) {
-        answer.push(j + 1);
-        stageN[j] = 0;
-        break;
-      }
-    }
-  }
+  stageN
+    .sort((a, b) => {
+      if (a[1] === b[1]) return a[1] - b[1];
+      else return b[1] - a[1];
+    })
+    .forEach((v) => answer.push(v[0]));
+
   return answer;
 }
 
