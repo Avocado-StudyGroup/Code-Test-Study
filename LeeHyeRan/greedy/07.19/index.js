@@ -32,13 +32,3 @@ function solution1(nums) {
 }
 
 console.log(solution1(6480));
-
-// 잃어버린 괄호
-// 주어진 식의 값을 괄호를 사용하여 최소값으로 만드는 문제
-function solution2() {
-  let nums = "55 - 50 + 40";
-  let answer = Number(nums);
-  return answer;
-}
-
-console.log(solution2());
