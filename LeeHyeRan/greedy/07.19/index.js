@@ -32,3 +32,23 @@ function solution1(nums) {
 }
 
 console.log(solution1(6480));
+
+// 설탕 배달
+function solution2(nums) {
+  let answer = 0;
+  let flag = false;
+  while (nums >= 0) {
+    // nums가 0이거나 5로 나누어 떨어지면 나눈 몫을 구하고 flag 를 true로 변경
+    if (nums === 0 || nums % 5 === 0) {
+      answer += nums / 5;
+      flag = true;
+      break;
+    }
+    // 5로 나누어 떨어지지 않으면 3을 먼저 빼줌
+    nums -= 3;
+    answer += 1;
+  }
+  return flag ? answer : -1;
+}
+
+console.log(solution2(21));
