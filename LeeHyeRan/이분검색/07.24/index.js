@@ -41,3 +41,35 @@ function solution1() {
 }
 
 console.log(solution1());
+
+// 예산 문제
+// 전체 국가예산이 485이고 4개 지방의 예산요청이 각각 120, 110, 140, 150 인경우
+// 가능한 최대의 총 예산을 사용할 경우 상한액을 계산하는 문제
+// ex) 120, 110, 127, 127 을 분배할 경우 합이 484로 최대 예산을 사용하게 된다. 상한가 = 127
+function solution2(nums, k) {
+  let answer = 0;
+  // 시작점과 끝점 설정
+  let start = 1;
+  let end = nums.reduce((a, b) => Math.max(a, b));
+  while (start <= end) {
+    // 중간점 설정
+    let mid = Math.floor((start + end) / 2);
+    let total = 0;
+    // 예산 배정 중간 값과 예산 값을 비교해서 작은걸 더해줌
+    for (let x of nums) {
+      total += Math.min(mid, x);
+    }
+    // 조건 만족 시 상한액 증가 시키기
+    if (total <= k) {
+      answer = mid;
+      start = mid + 1;
+      // 조건 만족하지 못하면 상한액 감소 시키기
+    } else {
+      end = mid - 1;
+    }
+  }
+
+  return answer;
+}
+
+console.log(solution2([120, 110, 140, 150], 485));
