@@ -1,8 +1,15 @@
+// 첫풀이(답 못 찾음)
 function solution(num) {
-  return String(num)
-    .split('')
-    .reduce((a, b) => a + Number(b), 0);
+  for (let i = 3; i < 1000000; i++) {
+    return num % i === 1 && i;
+  }
 }
 
-console.log(solution(10)); // 3
-console.log(solution(12)); // 11
+// 두번째 풀이
+function solution2(num) {
+  for (let i = 3; i < 1000000; i++) {
+    if (num % i === 1) return i;
+  }
+}
+console.log(solution2(10)); // 3
+console.log(solution2(12)); // 11
