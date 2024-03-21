@@ -35,5 +35,15 @@ function solution(n, m) {
   return [Math.max(...maxNumber), Math.min(...minNumber)];
 }
 
+// 다른 사람 풀이 : 유클리드 호제법
+// for문 첫번째는 초기화, 두번째는 조건문, 반복문 마지막에 실행
+// 조건문이 0 이 나오면 for 문 종료
+// let, const로 쓰려면 for문 이전에 미리 할당해야함
+function gcdlcm(a, b) {
+  var r;
+  for (var ab = a * b; (r = a % b); a = b, b = r) {}
+  return [b, ab / b];
+}
+
 console.log(solution(3, 12)); // [3, 12]
 console.log(solution(2, 5)); // [1,10]
